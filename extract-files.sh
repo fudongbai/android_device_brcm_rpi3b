@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE=rpi3
+DEVICE=rpi3b
 VENDOR=brcm
 
 # Load extract_utils and do some sanity checks

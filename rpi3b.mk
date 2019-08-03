@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/brcm/rpi3/overlay
+DEVICE_PACKAGE_OVERLAYS += device/brcm/rpi3b/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, vendor/brcm/rpi3/rpi3-vendor.mk)
@@ -31,7 +32,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
-    audio.primary.rpi3 \
+    audio.primary.rpi3b \
     audio.r_submix.default \
     audio.usb.default
 
@@ -56,7 +57,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
-    gps.rpi3
+    gps.rpi3b
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -67,14 +68,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    libEGL_swiftshader \
-    libGLESv1_CM_swiftshader \
-    libGLESv2_swiftshader \
     libyuv \
-    memtrack.rpi3
-#    gralloc.rpi3 \
-#    hwcomposer.rpi3 \
-#    libGLES_mesa
+    memtrack.rpi3b \
+    gralloc.rpi3b \
+    hwcomposer.rpi3b \
+    libGLES_mesa
 
 # I2C
 PRODUCT_PACKAGES += \
@@ -90,7 +88,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.rpi3
+    android.hardware.light@2.0-service.rpi3b
 
 # Power
 PRODUCT_PACKAGES += \
@@ -111,11 +109,11 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/brcm/rpi3/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/brcm/rpi3b/ramdisk,root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/brcm/rpi3/prebuilt/vendor,vendor)
+    $(call find-copy-subdir-files,*,device/brcm/rpi3b/prebuilt/vendor,vendor)
 
 # Media codecs
 PRODUCT_COPY_FILES += \

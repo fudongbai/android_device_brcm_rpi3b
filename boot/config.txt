@@ -1,5 +1,5 @@
 # Kernel
-kernel=zImage
+arm_64bit=1
 initramfs ramdisk.img followkernel
 start_x=1
 
@@ -16,9 +16,9 @@ disable_overscan=1
 
 # Graphics acceleration
 #dtoverlay=vc4-fkms-v3d,cma-256
-#dtoverlay=vc4-kms-v3d,cma-256
-#mask_gpu_interrupt0=0x400
-#avoid_warnings=2
+dtoverlay=vc4-kms-v3d,cma-256
+mask_gpu_interrupt0=0x400
+avoid_warnings=2
 
 # I2C
 dtparam=i2c_arm=on

@@ -7,7 +7,7 @@ TARGET_SCREEN_HEIGHT := 720
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/brcm/rpi3/rpi3.mk)
+$(call inherit-product, device/brcm/rpi3b/rpi3b.mk)
 
 # Su
 WITH_SU := true
@@ -17,9 +17,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2018-07-05
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := rpi3
-PRODUCT_NAME := lineage_rpi3
+PRODUCT_DEVICE := rpi3b
+PRODUCT_NAME := lineage_rpi3b
 PRODUCT_BRAND := Raspberry
-PRODUCT_MODEL := Raspberry Pi 3
+PRODUCT_MODEL := Raspberry Pi 3B
 PRODUCT_MANUFACTURER := Raspberry
-PRODUCT_RELEASE_NAME := Raspberry Pi 3
+PRODUCT_RELEASE_NAME := Raspberry Pi 3B

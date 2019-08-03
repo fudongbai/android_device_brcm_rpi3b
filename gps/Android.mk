@@ -6,9 +6,12 @@ LOCAL_PATH := $(call my-dir)
 # hw/<OVERLAY_HARDWARE_MODULE_ID>.<ro.product.board>.so
 include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_MODULE := gps.rpi3
+LOCAL_MODULE := gps.rpi3b
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SRC_FILES := gps.c
+ifeq ($(TARGET_ARCH),arm64)
+	LOCAL_CFLAGS += -DOS64
+endif
 include $(BUILD_SHARED_LIBRARY)

@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE=rpi3
+DEVICE=rpi3b
 VENDOR=brcm
 
 INITIAL_COPYRIGHT_YEAR=2017

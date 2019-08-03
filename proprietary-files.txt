@@ -3,8 +3,8 @@ vendor/firmware/brcm/BCM4345C0.hcd
 vendor/firmware/brcm/BCM43430A1.hcd
 
 # Graphics
-vendor/lib/hw/gralloc.rpi3.so
-vendor/lib/hw/hwcomposer.rpi3.so
+vendor/lib/hw/gralloc.rpi3b.so
+vendor/lib/hw/hwcomposer.rpi3b.so
 
 # Widevine
 vendor/lib/mediadrm/libwvdrmengine.so

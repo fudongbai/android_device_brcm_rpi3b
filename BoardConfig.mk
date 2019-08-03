@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/brcm/rpi3
+LOCAL_PATH := device/brcm/rpi3b
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -22,16 +22,16 @@ TARGET_NO_RECOVERY := true
 
 TARGET_BOARD_PLATFORM := bcm2710
 
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
 # Kernel
-BOARD_KERNEL_IMAGE_NAME := zImage
-TARGET_KERNEL_CONFIG := lineageos_rpi3_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-gnueabihf-
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_CONFIG := lineageos_rpi3b_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE := kernel/brcm/rpi3
 
 # Audio
@@ -47,7 +47,8 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Graphics
-#BOARD_GPU_DRIVERS := vc4
+BOARD_GPU_DRIVERS := vc4
+BOARD_USES_DRM_GRALLOC := true
 TARGET_USES_HWC2 := true
 USE_OPENGL_RENDERER := true
 
@@ -66,7 +67,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/brcm/rpi3/sepolicy
+BOARD_SEPOLICY_DIRS += device/brcm/rpi3b/sepolicy
 
 # Wifi
 BOARD_WLAN_DEVICE := bcmdhd
